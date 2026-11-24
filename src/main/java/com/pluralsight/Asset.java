@@ -43,4 +43,5 @@ public class Asset {
         return originalCost;
     }
 
+
 }
