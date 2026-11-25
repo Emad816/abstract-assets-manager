@@ -8,6 +8,9 @@ public class Main {
 
         ArrayList<Asset> assets = new ArrayList<>();
 
+        //Cash
+        assets.add(new Cash("Mattress stash", "2026-01-15", new BigDecimal("2500")));
+
 
         // Houses
         assets.add(new House("My house", "2018-04-12", new BigDecimal("320000"),
@@ -23,26 +26,22 @@ public class Main {
         assets.add(new Vehicle("My truck", "2015-09-05", new BigDecimal("38000"),
                 "Ford F-150", 2015, 130000));
 
+        String message = "";
+
         for (Asset asset : assets) {
             if (asset instanceof House) {
-                System.out.println(asset.getDescription()
-                        + " address: " + ((House) asset).getAddress()
-                        + " date acquired: " + asset.getDateAcquired()
-                        +" original cost: " + asset.getOriginalCost()
-                        + " current value: $" + asset.getValue());
-
+                message = " address: " + ((House) asset).getAddress();
 
             } else if (asset instanceof  Vehicle) {
-                System.out.println(asset.getDescription()
-                        + " " + ((Vehicle) asset).getYear()
-                        + " " + ((Vehicle) asset).getMakeModel()
-                        + " date acquired: " + asset.getDateAcquired()
-                        + " original cost: " + asset.getOriginalCost()
-                        + " current value: $" + asset.getValue());
-
+                message = ((Vehicle) asset).getYear() + " " + ((Vehicle) asset).getMakeModel();
             }
+            System.out.println(asset.getDescription() + message
+                    + " date acquired: " + asset.getDateAcquired()
+                    + " original cost: $" + asset.getOriginalCost()
+                    + " current value: $" + asset.getValue());
 
         }
+
     }
 
 }
