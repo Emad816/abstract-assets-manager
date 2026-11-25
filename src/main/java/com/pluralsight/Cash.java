@@ -10,6 +10,6 @@ public class Cash extends Asset {
 
     @Override
     public BigDecimal getValue() {
-        return originalCost;
+        return originalCost.setScale(2, BigDecimal.ROUND_HALF_UP);
     }
 }

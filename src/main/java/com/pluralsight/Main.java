@@ -26,14 +26,14 @@ public class Main {
         assets.add(new Vehicle("My truck", "2015-09-05", new BigDecimal("38000"),
                 "Ford F-150", 2015, 130000));
 
-        String message = "";
-
         for (Asset asset : assets) {
+            String message = "";
+
             if (asset instanceof House) {
                 message = " address: " + ((House) asset).getAddress();
 
             } else if (asset instanceof  Vehicle) {
-                message = ((Vehicle) asset).getYear() + " " + ((Vehicle) asset).getMakeModel();
+                message = " " + ((Vehicle) asset).getYear() + " " + ((Vehicle) asset).getMakeModel();
             }
             System.out.println(asset.getDescription() + message
                     + " date acquired: " + asset.getDateAcquired()
