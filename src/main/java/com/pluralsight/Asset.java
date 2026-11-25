@@ -2,7 +2,7 @@ package com.pluralsight;
 
 import java.math.BigDecimal;
 
-public class Asset {
+public abstract class Asset {
 
     String description;
     String dateAcquired;
@@ -39,7 +39,5 @@ public class Asset {
         this.originalCost = originalCost;
     }
 
-    public BigDecimal getValue() {
-        return originalCost;
-    }
+    public abstract BigDecimal getValue();
 }
