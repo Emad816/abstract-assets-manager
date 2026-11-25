@@ -24,10 +24,25 @@ public class Main {
                 "Ford F-150", 2015, 130000));
 
         for (Asset asset : assets) {
-            System.out.println(asset.getDescription() + " date acquired: " + asset.getDateAcquired()
-                    + " original cost: " + asset.getOriginalCost()  + " current value: $" + asset.getValue());
+            if (asset instanceof House) {
+                System.out.println(asset.getDescription()
+                        + " address: " + ((House) asset).getAddress()
+                        + " date acquired: " + asset.getDateAcquired()
+                        +" original cost: " + asset.getOriginalCost()
+                        + " current value: $" + asset.getValue());
+
+
+            } else if (asset instanceof  Vehicle) {
+                System.out.println(asset.getDescription()
+                        + " " + ((Vehicle) asset).getYear()
+                        + " " + ((Vehicle) asset).getMakeModel()
+                        + " date acquired: " + asset.getDateAcquired()
+                        + " original cost: " + asset.getOriginalCost()
+                        + " current value: $" + asset.getValue());
+
+            }
+
         }
-
-
     }
+
 }
