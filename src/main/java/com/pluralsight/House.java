@@ -53,9 +53,8 @@ public class House extends Asset {
     @Override
     public BigDecimal getValue() {
 
-        // house value = (rate * squareFoot) + (0.25 * lotSize)
+        // Assigning house squar feet rate depending on condition number
         BigDecimal houseSqFtRate;
-
         switch (condition) {
             case 1 -> houseSqFtRate = BigDecimal.valueOf(180);
             case 2 -> houseSqFtRate = BigDecimal.valueOf(130);
@@ -64,6 +63,8 @@ public class House extends Asset {
             default -> houseSqFtRate = BigDecimal.ZERO;
         }
 
+        //BigDecimal version of (house SqFt & Lot SqFt & Lot SqFt Rate)
+        // so the math stays exact
         BigDecimal houseSqFt = BigDecimal.valueOf(squareFoot);
         BigDecimal lotSqFt = BigDecimal.valueOf(lotSize);
         BigDecimal lotSqFtRate = BigDecimal.valueOf(0.25);
